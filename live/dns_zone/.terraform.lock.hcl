@@ -2,7 +2,8 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.opentofu.org/hashicorp/google" {
-  version = "5.39.0"
+  version     = "5.39.0"
+  constraints = "5.39.0"
   hashes = [
     "h1:NDRs1eRKvNHIjBK7MT45qqqoKzN5A8en3TFB92di7c0=",
     "zh:08b627ccd6fdcd72b45d92f83caf33066fce9758151458e0c7568ed3c749fc59",
@@ -19,7 +20,8 @@ provider "registry.opentofu.org/hashicorp/google" {
 }
 
 provider "registry.opentofu.org/hashicorp/google-beta" {
-  version = "5.39.0"
+  version     = "5.39.0"
+  constraints = "5.39.0"
   hashes = [
     "h1:Nl2S5WtFtLV1tWHNzoSUcAsCnD0aNm4DS+X10PDRtek=",
     "zh:18566049486e88a167e751ca9cd97bc7e44c76a076819a297dc7cbe6c8958dcf",

@@ -1,3 +1,10 @@
+locals {
+  default_labels = {
+    managed-by = "terraform"
+    stage      = "dns_zone"
+  }
+}
+
 resource "google_dns_managed_zone" "main" {
   name        = var.main_dns_zone_name
   dns_name    = var.main_dns_zone_domain
@@ -23,12 +30,3 @@ resource "google_dns_managed_zone" "main" {
     enable_logging = var.main_dns_zone_enable_logging
   }
 }
-
-import {
-  id = "bijlmerdreef733"
-  to = google_dns_managed_zone.main
-}
-
-# output "main_dns_zone_name" {
-#   value = google_dns_managed_zone.main.name
-# }

@@ -1,3 +1,12 @@
+data "google_dns_managed_zone" "dns_zone" {
+  name = var.dns_zone_name
+}
+
+locals {
+  fqdn          = trimsuffix(data.google_dns_managed_zone.dns_zone.dns_name, ".")
+  dns_zone_name = data.google_dns_managed_zone.dns_zone.name
+}
+
 resource "google_certificate_manager_dns_authorization" "dns_authorization" {
   name        = "${local.dns_zone_name}-dns-authorization"
   description = "DNS authorization for ${local.fqdn} to support wildcard certificates"
